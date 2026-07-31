@@ -1,0 +1,10 @@
+node_modules/
+
+# Created at runtime on the first save
+data/
+
+# Jest coverage output
+coverage/
+
+*.log
+.DS_Store

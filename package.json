@@ -1,0 +1,28 @@
+{
+  "name": "expense-tracker-api",
+  "version": "1.0.0",
+  "description": "A REST API to manage personal expenses",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "jest"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2",
+    "supertest": "^7.1.1"
+  },
+  "overrides": {
+    "test-exclude": "^8.0.0",
+    "glob": "^13.0.6",
+    "minimatch": "^10.2.2",
+    "brace-expansion": "^5.0.9"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
