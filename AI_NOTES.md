@@ -1,6 +1,6 @@
 # AI Notes
 
-This project was builtby me and  with AI help for the initial test suite and a first draft of the README.
+This project was built by me and  with AI help for the initial test suite and a first draft of the README.
 
 ## 1. Which parts of the code were AI-generated vs. written by you
 
