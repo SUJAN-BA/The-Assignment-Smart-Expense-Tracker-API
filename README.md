@@ -37,6 +37,21 @@ npm start
 Expected: `Expense Tracker API is running on http://localhost:3000`. The server
 runs until you press `Ctrl+C`.
 
+**4. Run the smoke test** (optional, Windows PowerShell). Leave the server from
+step 3 running and open a second terminal:
+
+```powershell
+.\scripts\smoke-test.ps1
+```
+
+Expected: `All checks passed - every requirement works.`
+
+It adds a few expenses, checks each requirement against the running server,
+deletes what it added, and prints a pass/fail line per check. It is safe to run
+against real data — it records the counts and totals before it starts, checks
+how much they moved, and confirms your existing expenses are untouched at the
+end. Add `-BaseUrl http://localhost:4000` if the server is on another port.
+
 To use a different port, set `PORT` (for example `PORT=4000 npm start`). For
 live reload while editing, use `npm run dev`.
 
@@ -152,7 +167,7 @@ curl -X DELETE http://localhost:3000/expenses/<id>
 ├── package.json
 ├── data/                  created on the first save, holds expenses.json
 ├── scripts/
-│   └── smoke-test.ps1     optional end-to-end check against a running server
+│   └── smoke-test.ps1     step 4: end-to-end check against a running server
 ├── src/
 │   ├── server.js          starts the HTTP server
 │   ├── app.js             builds the Express app
@@ -164,11 +179,6 @@ curl -X DELETE http://localhost:3000/expenses/<id>
 │       └── errorHandler.js
 └── tests/                 Jest + Supertest tests
 ```
-
-`scripts/smoke-test.ps1` is an optional extra (Windows PowerShell only). With
-the server running, `.\scripts\smoke-test.ps1` exercises every endpoint against
-it and cleans up after itself. `npm test` covers the same behaviour and is the
-one to run.
 
 ## Notes on some decisions
 
